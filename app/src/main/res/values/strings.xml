@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">android-estate-app</string>
+    <string name="random_button_text">Bien immobilier au hasard</string>
+    <string name="add_button_text">Déposer un bien</string>
+    <string name="list_button_text">Lister les biens</string>
+    <string name="profile_button_text">Mon profil</string>
+</resources>
