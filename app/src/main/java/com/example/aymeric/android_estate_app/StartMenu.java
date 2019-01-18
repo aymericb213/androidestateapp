@@ -2,6 +2,7 @@ package com.example.aymeric.android_estate_app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class StartMenu extends AppCompatActivity {
 
@@ -12,4 +13,7 @@ public class StartMenu extends AppCompatActivity {
     }
 
 
+    public void randomProperty(View view) {
+        setContentView(R.layout.activity_property_view);
+    }
 }
