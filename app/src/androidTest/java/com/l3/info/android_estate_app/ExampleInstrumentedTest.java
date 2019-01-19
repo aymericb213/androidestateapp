@@ -1,4 +1,4 @@
-package com.example.aymeric.android_estate_app;
+package com.l3.info.android_estate_app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

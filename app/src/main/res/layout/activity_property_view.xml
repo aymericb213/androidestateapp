@@ -7,15 +7,17 @@
 
     <TextView
         android:id="@+id/property_title"
-        android:layout_width="235dp"
-        android:layout_height="25dp"
+        android:layout_width="246dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="titre"
+        android:text="pas le bon titre"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,12 +36,13 @@
 
     <TextView
         android:id="@+id/property_price"
-        android:layout_width="126dp"
-        android:layout_height="23dp"
+        android:layout_width="135dp"
+        android:layout_height="36dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Prix"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/property_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
@@ -54,6 +57,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Ville"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/property_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/property_price"

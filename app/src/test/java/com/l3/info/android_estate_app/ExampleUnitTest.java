@@ -1,4 +1,4 @@
-package com.example.aymeric.android_estate_app;
+package com.l3.info.android_estate_app;
 
 import org.junit.Test;
 
