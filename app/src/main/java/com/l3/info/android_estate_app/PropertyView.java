@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class PropertyView extends AppCompatActivity {
 
-    private Propriete client = new Propriete("test");
+    private Propriete client;
 
     TextView title = findViewById(R.id.property_title);
 

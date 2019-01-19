@@ -3,16 +3,67 @@ package com.l3.info.android_estate_app;
 public class Vendeur {
 
     private String id;
-    private String lastname;
-    private String firstname;
+    private String nom;
+    private String prenom;
     private String email;
-    private String phone_number;
+    private String telephone;
 
-    public Vendeur() {
-        this.id="vendeur";
-        this.lastname="Jean-Michel";
-        this.firstname="Pierre";
-        this.email = "mail";
-        this.phone_number="04025064";
+    public Vendeur(String id, String nom, String prenom, String email, String telephone) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.telephone = telephone;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    @Override
+    public String toString() {
+        return "Vendeur{" +
+                "id='" + id + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' +
+                '}';
     }
 }

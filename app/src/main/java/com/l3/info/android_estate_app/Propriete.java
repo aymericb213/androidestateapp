@@ -1,37 +1,37 @@
 package com.l3.info.android_estate_app;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Propriete {
 
     private String id;
-    private String title;
+    private String titre;
     private String description;
 
-    private int nb_rooms;
-    private List<String> features;//ex : garage, piscine...
-    private int price;
+    private int nbPieces;
+    private List<String> caracteristiques;//ex : garage, piscine...
+    private int prix;
 
-    private String city;
-    private String city_postcode;
+    private String ville;
+    private String codePostal;
 
-    private Vendeur seller;
-    private List<String> pics;//liste d'URL
-    private Date creation_date;
+    private Vendeur vendeur;
+    private List<String> images;//liste d'URL
+    private long date;
 
-    public Propriete(String id) {
-        this.title = "Maison";
-        this.description = "C'est une maison";
-        this.nb_rooms=2;
-        this.features = new ArrayList<String>();
-        this.price=20;
-        this.city="Caen";
-        this.city_postcode="14000";
-        this.seller=new Vendeur();
-        this.pics= new ArrayList<String>();
-        this.creation_date=new Date();
+    public Propriete(String id, String titre, String description, int nbPieces, List<String> caracteristiques, int prix, String ville, String codePostal, Vendeur vendeur, List<String> images, long date) {
+        this.id = id;
+        this.titre = titre;
+        this.description = description;
+        this.nbPieces = nbPieces;
+        this.caracteristiques = caracteristiques;
+        this.prix = prix;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.vendeur = vendeur;
+        this.images = images;
+        this.date = date;
     }
 
     public String getId() {
@@ -42,12 +42,12 @@ public class Propriete {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitre() {
+        return titre;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitre(String titre) {
+        this.titre = titre;
     }
 
     public String getDescription() {
@@ -58,67 +58,84 @@ public class Propriete {
         this.description = description;
     }
 
-    public int getNb_rooms() {
-        return nb_rooms;
+    public int getNbPieces() {
+        return nbPieces;
     }
 
-    public void setNb_rooms(int nb_rooms) {
-        this.nb_rooms = nb_rooms;
+    public void setNbPieces(int nbPieces) {
+        this.nbPieces = nbPieces;
     }
 
-    public List<String> getFeatures() {
-        return features;
+    public List<String> getCaracteristiques() {
+        return caracteristiques;
     }
 
-    public void setFeatures(List<String> features) {
-        this.features = features;
+    public void setCaracteristiques(List<String> caracteristiques) {
+        this.caracteristiques = caracteristiques;
     }
 
-    public int getPrice() {
-        return price;
+    public int getPrix() {
+        return prix;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPrix(int prix) {
+        this.prix = prix;
     }
 
-    public String getCity() {
-        return city;
+    public String getVille() {
+        return ville;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
-    public String getCity_postcode() {
-        return city_postcode;
+    public String getCodePostal() {
+        return codePostal;
     }
 
-    public void setCity_postcode(String city_postcode) {
-        this.city_postcode = city_postcode;
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
     }
 
-    public Vendeur getSeller() {
-        return seller;
+    public Vendeur getVendeur() {
+        return vendeur;
     }
 
-    public void setSeller(Vendeur seller) {
-        this.seller = seller;
+    public void setVendeur(Vendeur vendeur) {
+        this.vendeur = vendeur;
     }
 
-    public List<String> getPics() {
-        return pics;
+    public List<String> getImages() {
+        return images;
     }
 
-    public void setPics(List<String> pics) {
-        this.pics = pics;
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 
-    public Date getCreation_date() {
-        return creation_date;
+    public long getDate() {
+        return date;
     }
 
-    public void setCreation_date(Date creation_date) {
-        this.creation_date = creation_date;
+    public void setDate(long date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Propriete{" +
+                "id='" + id + '\'' +
+                ", titre='" + titre + '\'' +
+                ", description='" + description + '\'' +
+                ", nbPieces=" + nbPieces +
+                ", caracteristiques=" + caracteristiques +
+                ", prix=" + prix +
+                ", ville='" + ville + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                ", vendeur=" + vendeur +
+                ", images=" + images +
+                ", date=" + date +
+                '}';
     }
 }
