@@ -1,6 +1,7 @@
 package com.l3.info.android_estate_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
@@ -69,24 +70,37 @@ public class StartMenu extends AppCompatActivity {
                     if (!response.isSuccessful()) {
                         throw new IOException("Unexpected HTTP code " + response);
                     }
-
-                    Moshi moshi = new Moshi.Builder().build();
-                    JsonAdapter<Propriete> jsonAdapter = moshi.adapter(Propriete.class);
-                    String testPropertyJson = responseBody.string();
-                    try {
-                        Propriete test = jsonAdapter.fromJson(testPropertyJson);
-                        Log.i("maison", test.toString());
-                    } catch (IOException e) {
-                        Log.i("test", "Erreur I/O");
-                    }
+                    final String testPropertyJson = responseBody.string();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            updateUI(testPropertyJson); }
+                    });
                 }
             }
         });
     }
 
+    private void updateUI(String responseBody){
+        Moshi moshi = new Moshi.Builder().add(new Moshi.Builder().build().adapter(Vendeur.class)).build();
+        JsonAdapter<Propriete> jsonAdapter = moshi.adapter(Propriete.class);
+        try {
+            Propriete test = jsonAdapter.fromJson(responseBody);
+            Log.i("maison", test.toString());
+        } catch (IOException e) {
+
+        }
+    }
+
     public void randomProperty(View view) {
         makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
+        Intent intent = new Intent(this, PropertyView.class);
+        intent.putExtra("Propriete", propriete);
+        startActivity(intent);
+    }
 
-//        setContentView(R.layout.activity_property_view);
+    public void listProperties(View view) {
+        makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/liste.json");
+
     }
 }

@@ -1,9 +1,12 @@
 package com.l3.info.android_estate_app;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Propriete {
+public class Propriete implements Parcelable {
 
     private String id;
     private String titre;
@@ -32,6 +35,38 @@ public class Propriete {
         this.vendeur = vendeur;
         this.images = images;
         this.date = date;
+    }
+
+    public Propriete(Parcel parcel) {
+        this.id = parcel.readString();
+        this.titre = parcel.readString();
+        this.description = parcel.readString();
+        this.nbPieces = parcel.readInt();
+        parcel.readStringList(this.caracteristiques);
+        this.prix = parcel.readInt();
+        this.ville = parcel.readString();
+        this.codePostal = parcel.readString();
+        parcel.readStringList(this.images);
+        this.date = parcel.readLong();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.titre);
+        dest.writeString(this.description);
+        dest.writeInt(this.nbPieces);
+        dest.writeStringList(this.caracteristiques);
+        dest.writeInt(this.prix);
+        dest.writeString(this.ville);
+        dest.writeString(this.codePostal);
+        dest.writeStringList(this.images);
+        dest.writeLong(this.date);
     }
 
     public String getId() {
@@ -138,4 +173,5 @@ public class Propriete {
                 ", date=" + date +
                 '}';
     }
+
 }
