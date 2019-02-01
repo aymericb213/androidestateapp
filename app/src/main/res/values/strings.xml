@@ -4,4 +4,19 @@
     <string name="add_button_text">Déposer un bien</string>
     <string name="list_button_text">Lister les biens</string>
     <string name="profile_button_text">Mon profil</string>
+    <string name="form_title_text">Nouvelle annonce</string>
+    <string name="ad_desc_hint">Description du bien</string>
+    <string name="ad_title_hint">Titre</string>
+    <string name="ad_pieces_text">Nombre de pièces</string>
+    <string name="ad_feats_text">Caractéristiques</string>
+    <string name="ad_price_text">Prix</string>
+    <string name="ad_town_hint">Ville</string>
+    <string name="ad_postcode_hint">Code postal</string>
+    <string name="ad_pic_hint">Lien image</string>
+    <string name="seller_title_text">Informations vendeur</string>
+    <string name="seller_name_hint">Nom</string>
+    <string name="seller_mail_hint">Adresse mail</string>
+    <string name="seller_phone_text">Téléphone</string>
+    <string name="seller_surname">Prénom</string>
+    <string name="valider">Valider</string>
 </resources>

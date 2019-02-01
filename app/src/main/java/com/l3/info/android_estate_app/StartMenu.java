@@ -23,7 +23,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-public class StartMenu extends AppCompatActivity {
+public class  StartMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +95,7 @@ public class StartMenu extends AppCompatActivity {
     public void randomProperty(View view) {
         makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
         Intent intent = new Intent(this, PropertyView.class);
+        Propriete propriete = new Propriete();
         intent.putExtra("Propriete", propriete);
         startActivity(intent);
     }
@@ -102,5 +103,9 @@ public class StartMenu extends AppCompatActivity {
     public void listProperties(View view) {
         makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/liste.json");
 
+    }
+
+    public void addProperty(View view) {
+        setContentView(R.layout.activity_property_form);
     }
 }

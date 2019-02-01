@@ -23,6 +23,10 @@ public class Propriete implements Parcelable {
     private List<String> images;//liste d'URL
     private long date;
 
+    public Propriete() {
+
+    }
+
     public Propriete(String id, String titre, String description, int nbPieces, List<String> caracteristiques, int prix, String ville, String codePostal, Vendeur vendeur, List<String> images, long date) {
         this.id = id;
         this.titre = titre;
