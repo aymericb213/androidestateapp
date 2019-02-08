@@ -20,6 +20,6 @@ public class NewPropertyFormView extends AppCompatActivity {
 
     public void insert(View view) {
         long id = db.insert(new Propriete());
-        Toast.makeText(getApplicationContext(), "Message enregistré avec le numéro " + id, 3).show();
+        Toast.makeText(getApplicationContext(), "Message enregistré avec le numéro " + id, Toast.LENGTH_SHORT).show();
     }
 }

@@ -70,33 +70,26 @@ public class  StartMenu extends AppCompatActivity {
                     if (!response.isSuccessful()) {
                         throw new IOException("Unexpected HTTP code " + response);
                     }
-                    final String testPropertyJson = responseBody.string();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            updateUI(testPropertyJson); }
-                    });
+                    Moshi moshi = new Moshi.Builder().build();
+                    JsonAdapter<Vendeur> sellerAdapter = moshi.adapter(Vendeur.class);
+                    JsonAdapter<Propriete> jsonAdapter = moshi.adapter(Propriete.class);
+                    Propriete test = jsonAdapter.fromJson(responseBody.string());
+                    Log.i("maison", test.toString());
+
                 }
             }
         });
     }
 
     private void updateUI(String responseBody){
-        Moshi moshi = new Moshi.Builder().add(new Moshi.Builder().build().adapter(Vendeur.class)).build();
-        JsonAdapter<Propriete> jsonAdapter = moshi.adapter(Propriete.class);
-        try {
-            Propriete test = jsonAdapter.fromJson(responseBody);
-            Log.i("maison", test.toString());
-        } catch (IOException e) {
 
-        }
     }
 
     public void randomProperty(View view) {
-        makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
+        //makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
         Intent intent = new Intent(this, PropertyView.class);
-        Propriete propriete = new Propriete();
-        intent.putExtra("Propriete", propriete);
+        //Propriete propriete = new Propriete();
+        //intent.putExtra("Propriete", propriete);
         startActivity(intent);
     }
 
