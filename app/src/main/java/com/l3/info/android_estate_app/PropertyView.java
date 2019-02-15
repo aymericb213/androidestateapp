@@ -22,6 +22,7 @@ public class PropertyView extends AppCompatActivity {
         setContentView(R.layout.activity_property_view);
         Intent intent = getIntent();
         Propriete propriete;
+        Log.i("prop", intent.getParcelableExtra("propriete").toString());
         if (intent.getParcelableExtra("propriete") != null) {
             propriete = getIntent().getParcelableExtra("propriete");
         } else {
@@ -45,7 +46,6 @@ public class PropertyView extends AppCompatActivity {
                     new Date().getDate()
             );
         }
-        Log.i("View", propriete.toString());
         fillAnnonce(propriete);
     }
 

@@ -23,7 +23,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-public class  StartMenu extends AppCompatActivity {
+public class StartMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,27 +70,25 @@ public class  StartMenu extends AppCompatActivity {
                     if (!response.isSuccessful()) {
                         throw new IOException("Unexpected HTTP code " + response);
                     }
-                    Moshi moshi = new Moshi.Builder().build();
-                    JsonAdapter<Vendeur> sellerAdapter = moshi.adapter(Vendeur.class);
+                    Moshi moshi = new Moshi.Builder().add(new ApiProprieteAdapter()).build();
                     JsonAdapter<Propriete> jsonAdapter = moshi.adapter(Propriete.class);
                     Propriete test = jsonAdapter.fromJson(responseBody.string());
                     Log.i("maison", test.toString());
-
+                    updateUI(test);
                 }
             }
         });
     }
 
-    private void updateUI(String responseBody){
-
+    private void updateUI(Propriete p){
+      Intent intent = new Intent(this, PropertyView.class);
+      Propriete propriete = p;
+      intent.putExtra("Propriete", propriete);
+      startActivity(intent);
     }
 
     public void randomProperty(View view) {
-        //makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
-        Intent intent = new Intent(this, PropertyView.class);
-        //Propriete propriete = new Propriete();
-        //intent.putExtra("Propriete", propriete);
-        startActivity(intent);
+        makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
     }
 
     public void listProperties(View view) {

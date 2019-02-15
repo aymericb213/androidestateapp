@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Propriete implements Parcelable {
@@ -41,17 +42,35 @@ public class Propriete implements Parcelable {
         this.date = date;
     }
 
+
+    //creator - used when un-parceling our parcle (creating the object)
+    public static final Parcelable.Creator<Propriete> CREATOR = new Parcelable.Creator<Propriete>(){
+
+        @Override
+        public Propriete createFromParcel(Parcel parcel) {
+            return new Propriete(parcel);
+        }
+
+        @Override
+        public Propriete[] newArray(int size) {
+            return new Propriete[0];
+        }
+    };
+
     public Propriete(Parcel parcel) {
-        this.id = parcel.readString();
-        this.titre = parcel.readString();
-        this.description = parcel.readString();
-        this.nbPieces = parcel.readInt();
-        parcel.readStringList(this.caracteristiques);
-        this.prix = parcel.readInt();
-        this.ville = parcel.readString();
-        this.codePostal = parcel.readString();
-        parcel.readStringList(this.images);
-        this.date = parcel.readLong();
+        this(
+                parcel.readString(),
+                parcel.readString(),
+                parcel.readString(),
+                parcel.readInt(),
+                parcel.readArrayList(String.class.getClassLoader()),
+                parcel.readInt(),
+                parcel.readString(),
+                parcel.readString(),
+                (Vendeur) parcel.readParcelable(Vendeur.class.getClassLoader()),
+                parcel.readArrayList(String.class.getClassLoader()),
+                parcel.readLong()
+        );
     }
 
     @Override
