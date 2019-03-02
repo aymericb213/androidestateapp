@@ -104,6 +104,7 @@ public class StartMenu extends AppCompatActivity {
 
     public void addProperty(View view) {
 
-        setContentView(R.layout.activity_property_form);
+        Intent intent = new Intent(this, PropertyAddActivity.class);
+        startActivity(intent);
     }
 }

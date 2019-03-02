@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".PropertyView"></activity>
         <activity android:name=".ListeProprieteActivity"></activity>
+        <activity android:name=".PropertyAddActivity"></activity>
 
     </application>
 

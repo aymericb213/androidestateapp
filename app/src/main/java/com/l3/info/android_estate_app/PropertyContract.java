@@ -16,4 +16,6 @@ public class PropertyContract implements BaseColumns{
     public static final String COL_SELLER = "seller";
     public static final String COL_PICS = "pictures";
     public static final String COL_DATE = "timestamp";
+
+
 }
