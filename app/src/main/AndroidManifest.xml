@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PropertyView"></activity>
+        <activity android:name=".ListeProprieteActivity"></activity>
+
     </application>
 
 </manifest>

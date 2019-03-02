@@ -89,14 +89,21 @@ public class StartMenu extends AppCompatActivity {
 
     public void randomProperty(View view) {
         makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/immobilier.json");
+
+        Intent intent = new Intent(this, PropertyView.class);
+        startActivity(intent);
     }
 
     public void listProperties(View view) {
         makeHttpRequest("https://ensweb.users.info.unicaen.fr/android-estate/mock-api/liste.json");
 
+        Intent intent = new Intent(this, ListeProprieteActivity.class);
+        startActivity(intent);
+
     }
 
     public void addProperty(View view) {
+
         setContentView(R.layout.activity_property_form);
     }
 }
